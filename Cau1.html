@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function timGiaTriLonThu3(arr) {
+        let lonNhat = 0;
+        let lonThu2 = 0;
+        let lonThu3 = 0;
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > lonNhat) {
+                lonThu3 = lonThu2;
+                lonThu2 = lonNhat;
+                lonNhat = arr[i];
+            } else if (arr[i] > lonThu2 && arr[i] !== lonNhat) {
+                lonThu3 = lonThu2;
+                lonThu2 = arr[i];
+            } else if (arr[i] > lonThu3 && arr[i] !== lonNhat && arr[i] !== lonThu2) {
+                lonThu3 = arr[i];
+            }
+        }
+        return lonThu3;
+    }
+   alert(timGiaTriLonThu3([2,5,7,3]))
+</script>
+
+</body>
+</html>
